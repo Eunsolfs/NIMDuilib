@@ -35,10 +35,9 @@ public:
 	// the ownership of the dialog
 	bool DoModal(ModalWndBase *dlg);
 	void CancelModalThenExit();
-
-private:
+public:
 	template<class _Ty>
-	friend class std::_Ref_count_obj;
+	friend class std::_Ref_count_obj2;
 
 	friend class AsyncModalRunnerManager;
 	friend class std::shared_ptr<AsyncModalRunner>;
@@ -47,8 +46,8 @@ private:
 	AsyncModalRunner(Delegate *delegate);
 	virtual ~AsyncModalRunner();
 
+private:
 	void Run();
-
 	bool is_running_;
 	bool quit_posted_;
 	Delegate *delegate_;

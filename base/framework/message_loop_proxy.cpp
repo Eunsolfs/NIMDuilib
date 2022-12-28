@@ -116,4 +116,11 @@ void MessageLoopProxyTraits::Destruct(const MessageLoopProxy* proxy)
 	proxy->OnDestruct();
 }
 
+template<>
+void MessageLoopProxy::PostTaskAndReplyRelay<void(), void()>::Run() {
+	std_task_();
+	origin_loop_->PostTask(
+		nbase::Bind(&PostTaskAndReplyRelay::RunReplyAndSelfDestruct, this));
+}
+
 }  // namespace nbase
