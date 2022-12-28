@@ -28,7 +28,8 @@ void TaskbarTabItem::Init(const std::wstring &taskbar_title, const std::string &
 	if (!is_win7_or_greater_)
 		return;
 
-	Create(NULL, taskbar_title.c_str(), WS_OVERLAPPED, 0, false);
+	LPCTSTR temp = (LPCTSTR)(taskbar_title.c_str());
+	Create(NULL,temp, WS_OVERLAPPED, 0, false);
 
 	HRESULT ret = S_OK;
 	BOOL truth = TRUE;

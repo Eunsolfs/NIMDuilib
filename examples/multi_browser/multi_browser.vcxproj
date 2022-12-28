@@ -94,6 +94,8 @@
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <ForcedIncludeFiles>stdafx.h</ForcedIncludeFiles>
       <AdditionalIncludeDirectories>..\..\third_party\cef_wrapper;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -112,6 +114,8 @@
       <SDLCheck>true</SDLCheck>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <ForcedIncludeFiles>stdafx.h</ForcedIncludeFiles>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -125,6 +129,8 @@
     <ClCompile>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <ForcedIncludeFiles>stdafx.h</ForcedIncludeFiles>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <DelayLoadDLLs>nim_libcef.dll</DelayLoadDLLs>
@@ -134,6 +140,8 @@
     <ClCompile>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <ForcedIncludeFiles>stdafx.h</ForcedIncludeFiles>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <DelayLoadDLLs>nim_libcef.dll</DelayLoadDLLs>

@@ -6,7 +6,7 @@ static inline void DrawFunction(HDC hDC, bool bTransparent, UiRect rcDest, HDC h
 {
 	if (bTransparent || bAlphaChannel || uFade < 255
 		|| (rcSrc.GetWidth() == rcDest.GetWidth() && rcSrc.GetHeight() == rcDest.GetHeight())) {
-		BLENDFUNCTION ftn = { AC_SRC_OVER, 0, uFade, AC_SRC_ALPHA };
+		BLENDFUNCTION ftn = { AC_SRC_OVER, 0, static_cast<unsigned char>(uFade), AC_SRC_ALPHA };
 		::AlphaBlend(hDC, rcDest.left, rcDest.top, rcDest.GetWidth(), rcDest.GetHeight(),
 			hdcSrc, rcSrc.left, rcSrc.top, rcSrc.GetWidth(), rcSrc.GetHeight(), ftn);
 	}
@@ -482,14 +482,14 @@ void RenderContext_GdiPlus::DrawRoundRect(const UiRect& rc, const CSize& roundSi
 	// rcInflate.Inflate({ -1, -1, -1, -1 });
 
 	Gdiplus::GraphicsPath pPath;
-	pPath.AddArc(rc.left, rc.top, roundSize.cx, roundSize.cy, 180, 90);
-	pPath.AddLine(rc.left + roundSize.cx, rc.top, rc.right - roundSize.cx, rc.top);
-	pPath.AddArc(rc.right - roundSize.cx, rc.top, roundSize.cx, roundSize.cy, 270, 90);
-	pPath.AddLine(rc.right, rc.top + roundSize.cy, rc.right, rc.bottom - roundSize.cy);
-	pPath.AddArc(rc.right - roundSize.cx, rc.bottom - roundSize.cy, roundSize.cx, roundSize.cy, 0, 90);
-	pPath.AddLine(rc.right - roundSize.cx, rc.bottom, rc.left + roundSize.cx, rc.bottom);
-	pPath.AddArc(rc.left, rc.bottom - roundSize.cy, roundSize.cx, roundSize.cy, 90, 90);
-	pPath.AddLine(rc.left, rc.bottom - roundSize.cy, rc.left, rc.top + roundSize.cy);
+	pPath.AddArc((INT)rc.left, rc.top, roundSize.cx, roundSize.cy, 180, 90);
+	pPath.AddLine((INT)(rc.left + roundSize.cx), rc.top, rc.right - roundSize.cx, rc.top);
+	pPath.AddArc((INT)(rc.right - roundSize.cx), rc.top, roundSize.cx, roundSize.cy, 270, 90);
+	pPath.AddLine((INT)rc.right, rc.top + roundSize.cy, rc.right, rc.bottom - roundSize.cy);
+	pPath.AddArc((INT)(rc.right - roundSize.cx), rc.bottom - roundSize.cy, roundSize.cx, roundSize.cy, 0, 90);
+	pPath.AddLine((INT)(rc.right - roundSize.cx), rc.bottom, rc.left + roundSize.cx, rc.bottom);
+	pPath.AddArc((INT)rc.left, rc.bottom - roundSize.cy, roundSize.cx, roundSize.cy, 90, 90);
+	pPath.AddLine((INT)rc.left, rc.bottom - roundSize.cy, rc.left, rc.top + roundSize.cy);
 	pPath.CloseFigure();
 
 	graphics.DrawPath(&pen, &pPath);

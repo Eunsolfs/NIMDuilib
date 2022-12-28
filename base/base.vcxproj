@@ -210,6 +210,8 @@
       <AdditionalIncludeDirectories>.\;..\</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4100;4127;4244;4245;4310;4355;4505;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -232,6 +234,8 @@
       <AdditionalIncludeDirectories>.\;..\</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4100;4127;4244;4245;4310;4355;4505;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -256,6 +260,8 @@
       <AdditionalIncludeDirectories>.\;..\</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4100;4127;4189;4244;4245;4310;4355;4505;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -281,6 +287,8 @@
       <AdditionalIncludeDirectories>.\;..\</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4100;4127;4189;4244;4245;4310;4355;4505;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
